@@ -6,5 +6,24 @@
         {
             throw new NotImplementedException();
         }
+
+        public static double GetNumber(string message)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static (double result, string chosenOperator) GetResult(int option)
+        {
+            // get operator
+            
+            // calculate
+
+            throw new NotImplementedException();
+        }
+        
+        public static void ShowResult(double x, double y, string chosenOperator, double result)
+        {
+            Console.WriteLine($"{x} {chosenOperator} {y} = {result}");
+        }
     }
 }
