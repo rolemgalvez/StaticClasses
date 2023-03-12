@@ -4,6 +4,33 @@
     {
         public static string GetOperator(int option)
         {
+            string output = string.Empty;
+
+            switch (option)
+            {
+                case 1:
+                    output = "+";
+                    break;
+                case 2:
+                    output = "-";
+                    break;
+                case 3:
+                    output = "x";
+                    break;
+                case 4:
+                    output = "÷";
+                    break;
+                default:
+                    break;
+            }
+
+            return output;
+        }
+
+        public static double Do(string chosenOperator)
+        {
+            // switch based on operator
+
             throw new NotImplementedException();
         }
 

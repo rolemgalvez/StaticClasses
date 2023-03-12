@@ -13,7 +13,8 @@ namespace HomeworkSixteen.Tests
         [TestCase(2, "-")]
         [TestCase(3, "x")]
         [TestCase(4, "÷")]
-        public void GetOperator_ShouldReturnRightOperator(int option, string expected)
+        [TestCase(5, "")]
+        public void GetOperator_ReturnCorrectOperator(int option, string expected)
         {
             // Arrange
 
@@ -21,7 +22,7 @@ namespace HomeworkSixteen.Tests
             string actual = Calculate.GetOperator(option);
 
             // Assert
-            Assert.That(actual, Is.SameAs(expected));
+            Assert.AreEqual(expected, actual);
         }
     }
 }

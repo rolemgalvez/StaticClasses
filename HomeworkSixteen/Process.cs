@@ -16,7 +16,7 @@
         {
             // get operator
             
-            // calculate
+            // Do calculate
 
             throw new NotImplementedException();
         }
