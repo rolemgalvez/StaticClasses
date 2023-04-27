@@ -11,16 +11,12 @@
 
         public static void Core()
         {
-            //Get option
             int option = Process.GetOption();
+            double x = Process.GetNumber("Enter first number: ");
+            double y = Process.GetNumber("Enter second number: ");
+            double result = Process.GetResult(option, x, y);
 
-            //Get x
-
-            //Get y
-
-            //Calculate
-
-            //Show results
+            Process.ShowResult(option, x, y, result);
         }
 
         public static void End()

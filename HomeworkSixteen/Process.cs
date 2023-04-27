@@ -2,6 +2,11 @@
 {
     public static class Process
     {
+        public static void InvalidInputMessage()
+        {
+            Console.WriteLine("Invalid input. Try again.");
+        }
+
         public static int GetOption()
         {
             int output = 0;
@@ -17,7 +22,7 @@
 
                 if (runAgain)
                 {
-                    Console.WriteLine("Invalid input. Try again.");
+                    InvalidInputMessage();
                 }
             }
 
@@ -26,20 +31,54 @@
 
         public static double GetNumber(string message)
         {
-            throw new NotImplementedException();
+            double output = 0;
+            bool runAgain = true;
+
+            while (runAgain)
+            {
+                Console.Write(message);
+                bool validInput = double.TryParse(Console.ReadLine(), out output);
+
+                runAgain = (validInput == false);
+
+                if (validInput == false)
+                {
+                    InvalidInputMessage();
+                }
+            }
+
+            return output;
         }
 
-        public static (double result, string chosenOperator) GetResult(int option)
+        public static double GetResult(int option, double x, double y)
         {
-            // get operator
-            
-            // Do calculate
+            double output = 0;
 
-            throw new NotImplementedException();
+            switch (option)
+            {
+                case 1:
+                    output = Calculate.Add(x, y);
+                    break;
+                case 2:
+                    output = Calculate.Subtract(x, y);
+                    break;
+                case 3:
+                    output = Calculate.Multiply(x, y);
+                    break;
+                case 4:
+                    output = Calculate.Divide(x, y);
+                    break;
+                default:
+                    break;
+            }
+
+            return output;
         }
         
-        public static void ShowResult(double x, double y, string chosenOperator, double result)
+        public static void ShowResult(int option, double x, double y, double result)
         {
+            string chosenOperator = Calculate.GetOperator(option);
+
             Console.WriteLine($"{x} {chosenOperator} {y} = {result}");
         }
     }
