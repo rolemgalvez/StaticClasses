@@ -4,7 +4,24 @@
     {
         public static int GetOption()
         {
-            throw new NotImplementedException();
+            int output = 0;
+            bool runAgain = true;
+
+            while (runAgain)
+            {
+                Console.Write("Enter desired operation (1) Add (2) Subtract (3) Multiply (4) Divide: ");
+                bool rightInput = int.TryParse(Console.ReadLine(), out output);
+                bool rightRange = (output > 0) && (output < 5);
+
+                runAgain = (rightInput == false) || (rightRange == false);
+
+                if (runAgain)
+                {
+                    Console.WriteLine("Invalid input. Try again.");
+                }
+            }
+
+            return output;
         }
 
         public static double GetNumber(string message)

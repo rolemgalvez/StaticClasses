@@ -12,6 +12,7 @@
         public static void Core()
         {
             //Get option
+            int option = Process.GetOption();
 
             //Get x
 
